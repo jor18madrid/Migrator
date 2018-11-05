@@ -1,0 +1,31 @@
+/* 
+.cmbMetadataSas select:focus{
+border-color:#101010 !important;
+} */
+
+.btnSubmit input{
+    background-color:rgb(16, 16, 16);
+    color:#999;
+    border:none;
+
+}
+
+.btnSubmit :hover{
+    background-color:rgb(16, 16, 16);
+    color:white;
+}
+
+.btnSubmit:focus{
+    color:black;
+    background-color:gray;
+    border-color:gray;
+}
+
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    color: #999;
+    background-color: rgb(16, 16, 16);
+    width: 100%;
+ }

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SAS.TOOLS.DTO.SAS_MACRO_DTO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<h2>MACRO</h2>
+
+
+
+<form method="post">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_MACRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MACRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DESC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ORIGEN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.STATEMENT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ORDEN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PRIORIDAD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.REQUERIDO)
+            </th>
+            <th>
+              
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_MACRO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MACRO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DESC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ORIGEN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.STATEMENT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ORDEN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PRIORIDAD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.REQUERIDO)
+                </td>
+                <td>
+                   @*<input type="text" name="idMacro" id="txtIdMacro" placeholder="@Html.DisplayFor(modelItem => item.ID_MACRO)" value="@Html.DisplayFor(modelItem => item.ID_MACRO)" />*@ 
+                   @* <button type="submit"  name="idMacro" id="txtIdMacro" value="@Html.DisplayFor(modelItem => item.ID_MACRO)">Enviar ID</button>*@
+                   @Html.ActionLink("Download", "LlamarMacro", "Macro", new { pa_Macro = @Html.DisplayFor(modelItem => item.MACRO) }, new { @class = "btn btn-primary btn-large" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    
+</form>

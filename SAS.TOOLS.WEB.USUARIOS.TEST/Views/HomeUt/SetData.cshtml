@@ -1,0 +1,615 @@
+﻿@model  SAS.TOOLS.DTO.IDM_DTO.IDM_PERSONAS_DTO
+
+@{
+    List<SelectListItem> Lst = new List<SelectListItem>()
+    {
+        new SelectListItem
+        {
+            Value = "F",
+            Text = "F"
+        },
+        new SelectListItem
+        {
+            Value = "M",
+            Text = "M"
+        }
+    };
+
+}
+
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<div class="panel-heading">
+    <h2>@ViewBag.Title</h2>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="btn-group pull-right">
+            <span><input id="btnGuardar" type="submit" value="Guardar" class="btn btn-success" onclick="Guardar()" /></span>
+            <span><input id="btnEjecutar" type="submit" value="Ejecutar" class="btn btn-warning" onclick="Ejecutar()" /></span>
+        </div>
+        <h4>DETALLE DEL REGISTRO - IDM</h4>
+
+    </div>
+    @using (Html.BeginForm("CrearUsuario", "HomeUt", FormMethod.Post, new { id = "formulario" }))
+    {
+        <div class="form-horizontal panel-body">
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <div class="col-sm-3 pull-right">
+                        @Html.LabelFor(model => model.Usuario.TIPO_USUARIO_ID)
+                        @Html.DropDownListFor(model => model.Usuario.TIPO_USUARIO_ID, (IEnumerable<SelectListItem>)ViewBag.Tipo, new { id = "ddUsuNiv", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Usuario.TIPO_USUARIO_ID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-3 pull-right">
+                        @Html.LabelFor(model => model.Usuario.NIVEL_USUARIO_ID)
+                        @Html.DropDownListFor(model => model.Usuario.NIVEL_USUARIO_ID, (IEnumerable<SelectListItem>)ViewBag.Nivel, new { id = "ddUsuNiv", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Usuario.NIVEL_USUARIO_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.PAIS_ID, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.PAIS_ID, (IEnumerable<SelectListItem>)ViewBag.Pais, new { id = "PAIS_ID", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.PAIS_ID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-2">
+                        @Html.LabelFor(model => model.TIPO_ID, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.TIPO_ID, (IEnumerable<SelectListItem>)ViewBag.TipoID, new { id = "TIPO_ID", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.TIPO_ID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.NRO_ID, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.NRO_ID, new { @class = "form-control", @placeholder = "0000-0000-00000" })
+                        @Html.ValidationMessageFor(model => model.NRO_ID, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.SEXO, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.SEXO, Lst, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SEXO, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.FECHA_NACIMIENTO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.FECHA_NACIMIENTO, new {@class = "form-control" ,@type = "date"})
+                        @Html.HiddenFor(model => model.FECHA_NACIMIENTO, new {@value = Model.FECHA_NACIMIENTO.ToString("dd MMM yyyy"),  @class = "form-control",  id = "txtDate" })
+                        @Html.ValidationMessageFor(model => model.FECHA_NACIMIENTO, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-12">
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.PRIMER_NOMBRE, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.PRIMER_NOMBRE, new { @class = "form-control", @placeholder = "Pedro" })
+                        @Html.ValidationMessageFor(model => model.PRIMER_NOMBRE, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.SEGUNDO_NOMBRE, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.SEGUNDO_NOMBRE, new { @class = "form-control", @placeholder = "Alberto" })
+                        @Html.ValidationMessageFor(model => model.SEGUNDO_NOMBRE, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.PRIMER_APELLIDO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.PRIMER_APELLIDO, new { @class = "form-control", @placeholder = "Gudiel" })
+                        @Html.ValidationMessageFor(model => model.PRIMER_APELLIDO, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.SEGUNDO_APELLIDO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.SEGUNDO_APELLIDO, new { @class = "form-control", @placeholder = "Zelaya" })
+                        @Html.ValidationMessageFor(model => model.SEGUNDO_APELLIDO, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-lg-12">
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.PUESTO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.PUESTO, new { @class = "form-control", @placeholder = "ASISTENTE EJECUTIVO" })
+                        @Html.ValidationMessageFor(model => model.PUESTO, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.CORREO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.CORREO, new { @class = "form-control", @placeholder = "correo@email.com" })
+                        @Html.ValidationMessageFor(model => model.CORREO, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.TELEFONO, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.TELEFONO, new { @class = "form-control", @placeholder = "(+504) 2234-9999" })
+                        @Html.ValidationMessageFor(model => model.TELEFONO, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="col-sm-3">
+                        @Html.LabelFor(model => model.CELULAR, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.CELULAR, new { @class = "form-control", @placeholder = "(+504) 9999-9999" })
+                        @Html.ValidationMessageFor(model => model.CELULAR, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <label> GRUPO CAB</label>
+                    @Html.DropDownListFor(model => model.ID_GRUPO_CAB, (IEnumerable<SelectListItem>)ViewBag.Grupos, new { id = "ddGruposCab", @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    @Html.LabelFor(model => model.DIRECCION, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.DIRECCION, new { @class = "form-control col-lg-12", style = "max-width: 97.5%;" })
+                    @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-sm-3 pull-right">
+                        @Html.LabelFor(model => model.VIGENTE, htmlAttributes: new { @class = "control-label" })
+                        @Html.CheckBox("VIGENTE", true)
+                        @Html.ValidationMessageFor(model => model.VIGENTE, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button id="addBtn" type="button" class="glyphicon glyphicon-plus btn btn-info pull-right" onclick="Agregar()"></button>
+                <h4>DETALLE DEL REGISTRO – SAS</h4>
+            </div>
+            <div class="form-group col-lg-12">
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <div class="col-sm-3">
+                            <label> SISTEMAS </label> 
+                            @Html.DropDownListFor(model => model.Sistema.ID_SISTEMA, (IEnumerable<SelectListItem>)ViewBag.Sistemas, "Seleccione una Opción", new { id = "ddSistemas", @class = "form-control" @*selectpicker*@, @data_placeholder = "--Seleccione una Opción--"@*, @data_live_search = "true"*@ })
+                        </div>
+                    </div>
+                    <span></span>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <div class="col-sm-3">
+                            <label> PERFIL </label> 
+                            @Html.DropDownList("hg", (IEnumerable<SelectListItem>)ViewBag.Opciones, "Seleccione una Opción", new { id = "ddPerfiles", @class = "form-control "@*selectpicker*@, @data_placeholder = "--Seleccione una Opción--"@*, @data_live_search = "true"*@ })
+                        </div>
+                        <div class="col-sm-3">
+                            <label> GRUPO </label> 
+                            @Html.DropDownList("gh", (IEnumerable<SelectListItem>)ViewBag.Grupos, "Seleccione una Opción", new { id = "ddGrupos", @class = "form-control "@*selectpicker*@, @data_placeholder = "--Seleccione una Opción--"@*, @data_live_search = "true"*@ })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <table id="tblPerfGrup" class="table table-bordered table-responsive">
+                    <thead>
+                        <tr>
+                            <th>
+                                Perfil ID
+                            </th>
+                            <th>
+                                Perfil Descripción
+                            </th>
+                            <th>
+                                Grupo ID
+                            </th>
+                            <th>
+                                Grupo Desripción
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        @Html.HiddenFor(model => model.optAction, new { id = "optAction" })
+        @Html.HiddenFor(model => model.nombreArchivo, new { id = "nombreArchivo" })
+        @Html.HiddenFor(model => model.Sistema.DESCRIPCION_SISTEMA, new { id = "Descripcion_Sys" })
+    }
+</div>
+
+<div class="panel panel-default">
+    @using (Html.BeginForm("Cargar", "HomeUt", new { file = "file" }, FormMethod.Post, new { id = "frmUP" }))
+    {
+        <div class="panel-heading">
+            <h2>@ViewBag.Title</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row col-lg-12">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <span><input id="btnUploadFile" type="file" class="form-control-file" /></span>
+                    <span><input id="btnCargar" type="button" value="Cargar" class="btn btn-primary" onclick="Verificar()" /></span>
+                    @*@Html.ActionLink("Ir a cargar", "Cargar","HomeUt", new {id = "myLink" });*@
+                    @*<input type="Text" name="name" value="@ViewBag.LISTA" id="txtLista" />*@
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div>
+</div>
+
+<script>
+    //$(document).ready(function () {
+    //    debugger
+    //    if ($('#txtResult').val() == 0) {
+    //        var xhr = new XMLHttpRequest();
+    //        xhr.open('GET', '/HomeUt/Index');
+    //    }
+    //});
+
+    //$('#myLink').click(function () {
+    //    debugger
+    //    var firstname = $('#btnUploadFile').val(); // get the textbox value
+    //    var url = $(this).attr('href') + '?name=' + firstname; // build new url
+    //    location.href = url; // redirect
+    //    return false; // cancel default redirect
+    //});
+
+
+
+    //$('#btnUploadFile').change(function () {
+    //    $('#btnCargar').prop("disabled", "");
+    //});
+
+    function Guardar() {
+        $('#optAction').val(1);
+        $('#Descripcion_Sys').val($('#ddSistemas option:selected').text());
+        LobiboxPrompt('prompt', 'Ingrese nombre del archivo');
+        //LobiboxAlert('success', 'Nombre del archivo');
+        //document.getElementById("formulario").submit();
+    };
+
+
+    function promptValid() {
+        debugger
+
+        var text = $('#txtPrompt').val();
+        if (!text == "") {
+            var nombreArchivo = $('#txtPrompt').val();
+            $('#nombreArchivo').val(nombreArchivo);
+            $('.lobibox.lobibox-prompt.animated-super-fast.zoomIn').attr('class', 'lobibox lobibox-prompt animated-super-fast zoomOut');
+            window.setTimeout(removeLobiboxDivs, 300);
+        }
+        else {
+            LobiboxAlert('warning', 'Precaución', 'No ingresó nombre del archivo');
+        }
+    }
+
+    
+
+
+
+
+
+
+    function removeLobiboxDivs()
+    {
+        debugger
+        $('.lobibox.lobibox-prompt.animated-super-fast.zoomOut').remove();
+        $('.lobibox-backdrop').remove();
+        $('body').removeClass('lobibox-open');
+        document.getElementById("formulario").submit();
+    }
+
+    function Ejecutar() {
+        $('#optAction').val(2)
+        document.getElementById("formulario").submit();
+    };
+
+
+
+    function Verificar() {
+        var form = $('frmUP')[0];
+        var formdata = new FormData(form);
+        var fileInput = document.getElementById('btnUploadFile').files.length;
+
+        if (fileInput == 0) {
+            return LobiboxAlert('warning','Precaución', 'No hay archivo seleccionado');
+        }
+
+        else {
+            return Cargar();
+        }
+    }
+
+
+
+    function Cargar() {
+        debugger
+        var form = $('frmUP')[0];
+        var formdata = new FormData(form);
+        var fileInput = document.getElementById('btnUploadFile').files.length;
+
+        for (i = 0; i < fileInput; i++) {
+            var file = document.getElementById("btnUploadFile").files[i];
+            formdata.append("btnUploadFile", file);
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/HomeUt/Cargar');
+        xhr.send(formdata);
+        //location.reload();
+        window.location.href = "/HomeUt/SetData";
+    };
+
+    var data = [];
+
+    $(document).ready(function (){
+        $('#PRIMER_NOMBRE').inputmask("a{1,20}", { "placeholder": "" });
+        $('#SEGUNDO_NOMBRE').inputmask("a{1,20}", { "placeholder": "" });
+        $('#PRIMER_APELLIDO').inputmask("a{1,20}", { "placeholder": "" });
+        $('#SEGUNDO_APELLIDO').inputmask("a{1,20}", { "placeholder": "" });
+        $('#NRO_ID').inputmask("9{1,13}", { "placeholder": "" });
+        $('#TELEFONO').inputmask("+999 99999999", { "placeholder": "" });
+        $('#CELULAR').inputmask("+999 99999999", { "placeholder": "" });
+      
+        var model = @Html.Raw(Json.Encode(Model));
+        var objTostring = JSON.parse(JSON.stringify ( model.Perfiles_Grupos));
+        var count = objTostring.length;
+
+        debugger
+        var date = $('#txtDate').val();
+        var substring = date.substring(0,10);
+        var array = substring.split("/",3);
+        var day = array[0];
+        var month = array[1];
+        var year = array[2];
+        var fullDate = year+"-"+month+"-"+day;
+        document.getElementById("FECHA_NACIMIENTO").value = fullDate;
+        if(count != 0)
+        {
+            for (var i = 0; i < count; i++) {
+                data.push({
+                    Perfil: objTostring[i].ID_PERFIL,
+                    Desc_Perf: objTostring[i].NOMBRE_PERFIL,
+                    Grupo: objTostring[i].ID_GRUPO,
+                    Desc_Grup: objTostring[i].NOMBRE_GRUPO,
+                    boton: "<button class='deleteButton' onclick='deleteButtonClick()'>Eliminar</button>",
+                    items: []
+                });
+            }
+            imprimir();
+        }
+
+    });
+
+
+
+
+
+   
+
+    function LobiboxAlert(type, title, message) {
+        Lobibox.notify(type, {
+            title: title,
+            size: 'normal',
+            pauseDelayOnHover: true,
+            continueDelayOnInactiveTab: false,
+            closeOnClick: true,
+            rounded: false,
+            position: "top center",
+            icon: true,
+            delayIndicator: true,
+            msg: message
+        });
+    }
+
+    function LobiboxPrompt(type, title_) {
+        Lobibox.prompt(type, {
+            width: 400,
+            title: title_,
+            attrs: {
+                placeholder: "Nombre del archivo",
+                id: "txtPrompt",
+            },                  // Object of any valid attribute of input field
+            value: '',          // Value which is given to textfield when messagebox is created
+            multiline: false,   // Set this true for multiline prompt
+            lines: 3,           // This works only for multiline prompt. Number of lines
+            type: 'text',       // Prompt type. Available types (text|number|color)
+            label: '',          // Set some text which will be shown exactly on top of textfield
+            required: true,
+            errorMessage: 'El campo es requerido'
+        });
+    }
+
+    //function GetLobiboxPromptValue() {
+    //    getValue();
+    //}
+
+
+    function Agregar() {
+        //var sistem = $('#ddSistemas').val();
+        var perfil = $('#ddPerfiles').val();
+        var grupo = $('#ddGrupos').val();
+
+        //if ($('#ddSistemas').val() == "") {
+        //    LobiboxAlert('warning', 'Precaución', 'Seleccione un Sistema.');
+        //} else
+        if ($('#ddPerfiles').val() == "") {
+            LobiboxAlert('warning', 'Precaución', 'Seleccione un Perfil.');
+            //} else if ($('#ddGrupos').val() == "") {
+            //    LobiboxAlert('warning', 'Precaución', 'Seleccione un Grupo.');
+            //}
+        }
+        else {
+            cargaDetalle(/* $('#ddSistemas').val(),*/ $('#ddPerfiles').val(), $('#ddGrupos').val());
+            imprimir();
+            //$('.ddSistemas-DropDownCls option').eq(0).prop('selected', true);
+            //$('#ddSistemas').selectpicker('refresh');
+            $('.ddPerfiles-DropDownCls option').eq(0).prop('selected', true);
+            //$('#ddPerfiles').selectpicker('refresh');
+            $('.ddGrupos-DropDownCls option').eq(0).prop('selected', true);
+            //$('#ddGrupos').selectpicker('refresh');
+        }
+    };
+
+
+
+    function cargaDetalle(/*sistema,*/ perfil, grupo) {
+        debugger
+        //Desc_Sistema = ($('#ddSistemas option:selected').text())
+        Desc_Perfil = ($('#ddPerfiles option:selected').text())
+        Desc_Grupo = ($('#ddGrupos option:selected').text())
+        if (Desc_Grupo == "Seleccione una Opción")
+        {
+            Desc_Grupo = "";
+        }
+
+        var ExisteRestriccion = false;
+        $.each(data, function (i, item) {
+            if (  /* item.Sistema == sistema &&*/ item.Perfil == perfil && item.Grupo == grupo) {
+                ExisteRestriccion = true;
+            }
+        });
+
+        if ($.isEmptyObject(data) || ExisteRestriccion == false) {
+            data.push({
+                //Sistema: sistema,
+                //Desc_Sist: Desc_Sistema,
+                Perfil: perfil,
+                Desc_Perf: Desc_Perfil,
+                Grupo: grupo,
+                Desc_Grup: Desc_Grupo,
+                boton: "<button class='deleteButton' onclick='deleteButtonClick()'>Eliminar</button>",
+                items: []
+            });
+        } else {
+            LobiboxAlert('warning', 'Precaución', 'La restricción ya esxiste.');
+        }
+    };
+
+    function imprimir() {
+        $('#tbTabla').remove();
+        if (!$.isEmptyObject(data)) {
+            document.getElementById("tblPerfGrup").appendChild(ToTable(data));
+        }
+    };
+
+
+    function ToTable(tblData) {
+
+
+        var table2 = document.createElement("tbody");
+        table2.id = "tbTabla";
+        table2.className = "table";
+        for (var x = 0; x < tblData.length; x++) {
+            var row = document.createElement("tr");
+            //var IdSisCell = document.createElement("td");
+            //var DescSisCell = document.createElement("td");
+            var IdPerfCell = document.createElement("td");
+            var DescPerfCell = document.createElement("td");
+            var IdGrupoCell = document.createElement("td");
+            var DescGrupoCell = document.createElement("td");
+
+            var deleteButtonRestrriccionCell = document.createElement("td");
+            var deleteButtonRestriccion = document.createElement("button");
+
+            var iconButtonRestriccion = document.createElement("i");
+            var att = document.createAttribute("aria-hidden");
+            att.value = true;
+            iconButtonRestriccion.setAttributeNode(att);
+
+            iconButtonRestriccion.className = "fa fa-times";
+            deleteButtonRestriccion.className = "btn btn-danger";
+
+            var nameIdGrupo = "Perfiles_Grupos[" + x + "].ID_GRUPO";
+            var IdGrupo = "Perfiles_Grupos_" + x + "__ID_GRUPO";
+
+            var nameNgrupo = "Perfiles_Grupos[" + x + "].NOMBRE_GRUPO";
+            var idNgrupo = "Perfiles_Grupos_" + x + "__NOMBRE_PERFIL";
+
+            var nameIdPerfil = "Perfiles_Grupos[" + x + "].ID_PERFIL";
+            var IdPerfil = "Perfiles_Grupos_" + x + "__ID_PERFIL";
+
+            var nameNperfil = "Perfiles_Grupos[" + x + "].NOMBRE_PERFIL";
+            var idNperfil = "Perfiles_Grupos_" + x + "__NOMBRE_PERFIL";
+
+            var inputGrupo = document.createElement("input");
+            inputGrupo.id = IdGrupo;
+            inputGrupo.name = nameIdGrupo;
+            inputGrupo.value = tblData[x].Grupo;
+            inputGrupo.type = "Hidden";
+
+            var inputNGrupo = document.createElement("input");
+            inputNGrupo.id = idNgrupo;
+            inputNGrupo.name = nameNgrupo;
+            inputNGrupo.value = tblData[x].Desc_Grup;
+            inputNGrupo.type = "Hidden";
+
+            var inputPerfil = document.createElement("input");
+            inputPerfil.id = IdPerfil;
+            inputPerfil.name = nameIdPerfil;
+            inputPerfil.value = tblData[x].Perfil;
+            inputPerfil.type = "Hidden";
+
+            var inputNPerfil = document.createElement("input");
+            inputNPerfil.id = idNperfil;
+            inputNPerfil.name = nameNperfil;
+            inputNPerfil.value = tblData[x].Desc_Perf;
+            inputNPerfil.type = "Hidden";
+
+            //var _Sis = tblData[x].Sistema;
+            var _Perf = tblData[x].Perfil;
+            var _Grup = tblData[x].Grupo;
+
+            deleteButtonRestriccion.addEventListener("click", callDelete( /*_Sis,*/ _Perf, _Grup));
+            deleteButtonRestriccion.appendChild(iconButtonRestriccion);
+
+            //IdSisCell.innerText = tblData[x].Sistema;
+            //DescSisCell.innerText = tblData[x].Desc_Sist;
+            IdPerfCell.innerText = tblData[x].Perfil;
+            DescPerfCell.innerText = tblData[x].Desc_Perf;
+            IdGrupoCell.innerText = tblData[x].Grupo;
+            DescGrupoCell.innerText = tblData[x].Desc_Grup;
+            deleteButtonRestrriccionCell.appendChild(deleteButtonRestriccion);
+
+            //row.appendChild(IdSisCell);
+            //row.appendChild(DescSisCell);
+            row.appendChild(IdPerfCell);
+            row.appendChild(inputPerfil);
+            row.appendChild(DescPerfCell);
+            row.appendChild(inputNPerfil);
+            row.appendChild(IdGrupoCell);
+            row.appendChild(inputGrupo);
+            row.appendChild(DescGrupoCell);
+            row.appendChild(inputNGrupo);
+            row.appendChild(deleteButtonRestriccion);
+
+            table2.appendChild(row);
+        }
+        return table2;
+    }
+
+    function callDelete(/*Sistema,*/ Perfil, Grupo) {
+        return function () { deleteButtonClick(/*Sistema, */Perfil, Grupo); };
+    }
+
+    function deleteButtonClick(/*Sistema, */Perfil, Grupo) {
+        for (var i = 0; i < data.length; i++) {
+            if ( /*data[i].Sistema == Sistema &&*/ data[i].Perfil == Perfil && data[i].Grupo == Grupo) {
+                data.splice(i, 1);
+            }
+        }
+        imprimir();
+    }
+
+</script>

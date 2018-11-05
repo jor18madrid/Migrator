@@ -1,0 +1,299 @@
+DCTES=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.62)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=PRUE2)
+    )
+  )
+
+ORACLE_XE=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.218.134)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=XE)
+    )
+  )
+
+PRUEBAS2=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.61)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=PRUE6)
+    )
+  )
+
+PRUEBAS3=
+  (DESCRIPTION=
+    (ADDRESS_LIST=
+      (LOAD_BALANCE=yes)
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.128)
+        (PORT=1521)
+      )
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.130)
+        (PORT=1521)
+      )
+    )
+    (CONNECT_DATA=
+      (FAILOVER_MODE=
+        (TYPE=select)
+        (METHOD=basic)
+      )
+      (SERVER=dedicated)
+      (SERVICE_NAME=PROD)
+    )
+  )
+
+PRUEBAS6=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.166)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=PRUE6)
+    )
+  )
+
+PRUEBAS6_OLD=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.64)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=PRUE6)
+    )
+  )
+
+PRODUCCION_ALTERNO=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.25.200.2)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=STBY1)
+    )
+  )
+
+CAPACITACION_OLD=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.64)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=CAPA)
+    )
+  )
+
+CAPACITACION=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.196)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=CAPA)
+    )
+  )
+
+PRUEBAS=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.64)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=PRUE)
+    )
+  )
+
+DESARROLLO=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.173)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=DESA)
+    )
+  )
+
+PRODUCCION_OLD=
+  (DESCRIPTION=
+    (ADDRESS_LIST=
+      (LOAD_BALANCE=yes)
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.100)
+        (PORT=1521)
+      )
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.101)
+        (PORT=1521)
+      )
+    )
+    (CONNECT_DATA=
+      (FAILOVER_MODE=
+        (TYPE=select)
+        (METHOD=basic)
+      )
+      (SERVER=dedicated)
+      (SERVICE_NAME=PROD)
+    )
+  )
+
+PRODUCCION=
+  (DESCRIPTION=
+    (ADDRESS_LIST=
+      (LOAD_BALANCE=yes)
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.128)
+        (PORT=1521)
+      )
+      (ADDRESS=
+        (PROTOCOL=TCP)
+        (HOST=172.16.48.130)
+        (PORT=1521)
+      )
+    )
+    (CONNECT_DATA=
+      (FAILOVER_MODE=
+        (TYPE=select)
+        (METHOD=basic)
+      )
+      (SERVER=dedicated)
+      (SERVICE_NAME=PROD_DB)
+    )
+  )
+
+BISEFIN=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.127)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=BISEFIN)
+    )
+  )
+
+REPOSITORIO=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.173)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=REPOS)
+    )
+  )
+
+PRUE=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.196)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=PRUE)
+    )
+  )
+
+BISEFIN=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.127)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=BISEFIN)
+    )
+  )
+
+SIMSGES=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.111)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=SIMSGES)
+    )
+  )
+
+SAMIPRU=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.25.22.100)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=SAMIPRU)
+    )
+  )
+
+SAMIPRE=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.79.13)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVICE_NAME=SAMIPRE)
+    )
+  )
+
+PRUEBAS6,PRUE6,P6=
+  (DESCRIPTION=
+    (ADDRESS=
+      (PROTOCOL=TCP)
+      (HOST=172.16.48.166)
+      (PORT=1521)
+    )
+    (CONNECT_DATA=
+      (SERVER=dedicated)
+      (SERVICE_NAME=PRUE6)
+    )
+  )

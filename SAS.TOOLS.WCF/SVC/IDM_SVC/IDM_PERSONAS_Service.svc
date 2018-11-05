@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true"  Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" Service="SAS.TOOLS.WCF.SVC.IDM_SVC.IDM_PERSONAS_Service, SAS.TOOLS.WCF" CodeBehind="IDM_PERSONAS_Service.svc.cs" %>

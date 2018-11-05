@@ -1,0 +1,22 @@
+[
+    {
+      "nombreDb": "DESARROLLO",
+      "idCnnString": "MDSAS2",
+      "pswdCnnString": "mdsasdev"
+    },
+    {
+      "nombreDb": "PRUEBAS6,PRUE6,P6",
+      "idCnnString": "MDSAS",
+      "pswdCnnString": "mdsasdev"
+    },
+    {
+      "nombreDb": "CAPACITACION",
+      "idCnnString": "MDSAS",
+      "pswdCnnString": "mdsasdev"
+    },
+    {
+      "nombreDb": "PRODUCCION",
+      "idCnnString": "MDSAS",
+      "pswdCnnString": "mdsasdev"
+    }
+]

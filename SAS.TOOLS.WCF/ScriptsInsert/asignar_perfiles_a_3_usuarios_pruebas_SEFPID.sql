@@ -1,0 +1,166 @@
+alter table MDSAS.SAS_USUARIOS disable all triggers;
+alter table MDSAS.SAS_ACCESOS_PERFILES disable all triggers;
+alter table MDSAS.SAS_ACCESOS_GRUPOS disable all triggers;
+
+Insert into MDSAS.SAS_USUARIOS
+   (ID_SISTEMA, USUARIO, ID_GRUPO, RESTRICCION, VIGENTE, 
+    API_ESTADO, API_TRANSACCION, USU_CRE, FEC_CRE, USU_MOD, 
+    FEC_MOD)
+ Values
+   (5, '0704196100380', 281, 'N', 'S', 
+    'ELABORADO', 'CREAR', user, sysdate, NULL, 
+    NULL);
+
+-------------------------------------------------------------
+
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1577, 5, 102, '0704196100380', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1578, 5, 103, '0704196100380', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+--------------------------------------------------------------
+
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1579, 5, 102, '0801198405779', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1580, 5, 103, '0801198405779', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+
+--------------------------------------------------------------
+
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1581, 5, 102, '0801198418087', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1582, 5, 103, '0801198418087', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+
+-------------------------------------------------------------
+------------AGREGARLES el 95 a los 3 USUARIOS----------------
+
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1583, 5, 95, '0704196100380', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1584, 5, 95, '0801198405779', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_PERFILES
+   (ID_ACCESO, ID_SISTEMA, ID_PERFIL, USUARIO, POR_DEFECTO, 
+    RESTRICCION, VIGENTE, API_ESTADO, API_TRANSACCION, USU_CRE, 
+    FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1585, 5, 95, '0801198418087', 'S', 
+    'N', 'S', 'ELABORADO', 'CREAR', user, sysdate, NULL, NULL);
+    
+--------------------------------------------------------------
+
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1577, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1578, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1579, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1580, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1581, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1582, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1583, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1584, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+    
+Insert into MDSAS.SAS_ACCESOS_GRUPOS
+   (ID_ACCESO, ID_GRUPO, VIGENTE, API_ESTADO, API_TRANSACCION, 
+    USU_CRE, FEC_CRE, USU_MOD, FEC_MOD)
+ Values
+   (1585, 281, 'S', 'ELABORADO', 'CREAR', 
+    'MDSAS', sysdate, NULL, NULL);
+ 
+commit;
+
+alter table MDSAS.SAS_USUARIOS enable all triggers;
+alter table MDSAS.SAS_ACCESOS_PERFILES enable all triggers;
+alter table MDSAS.SAS_ACCESOS_GRUPOS enable all triggers;
+
+

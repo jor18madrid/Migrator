@@ -1,0 +1,97 @@
+﻿@model  SAS.TOOLS.DTO.SAS_DDL_VIEW_DTO
+@{
+    ViewBag.Title = "Metadata";
+}
+<h2>Metadata</h2>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<form>
+    <input type="text" value="@ViewBag.Result" id="txtResult" hidden />
+</form>
+
+    @using (Html.BeginForm("DownloadFile", "Metadata", FormMethod.Post, new { id = "formulario" }))
+    {
+            <label> ORIGEN </label>  @Html.DropDownListFor(x => x.ID_ORIGEN, (IEnumerable<SelectListItem>)ViewBag.Origen, new{id = "ddOrigen",@class = "form-control"}) <br />
+            <label> SISTEMA </label> @Html.DropDownListFor(x => x.ID_SISTEMA, (IEnumerable<SelectListItem>)ViewBag.Opciones, new { id = "ddSistema", @class = "form-control" }) <br />
+            <label> FORMATO </label> @Html.DropDownListFor(x => x.ID_FORMATO, (IEnumerable<SelectListItem>)ViewBag.Formato, new { id = "ddFormato", @class = "form-control" }) <br />
+            <label> DESTINO </label> @Html.DropDownListFor(x => x.ID_DESTINO, (IEnumerable<SelectListItem>)ViewBag.Destino, new { id = "ddDestino", @class = "form-control", disabled = "disabled" }) <br />
+            <div class="btnSubmit">
+            <input type="submit" onclick="" value="Descargar Archivo SQL" class="btn btn-primary btn-lg" id="btnDownload" data-toggle="tooltip" data-placement="right" />
+            </div>
+    }
+
+<div id="lobiBackDrop">
+</div>
+
+<script>
+    
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        if ($('#txtResult').val() != "") {
+            if (!$('#txtResult').val().includes("Code:")) {
+                LobiboxAlert('success', 'Éxito', $('#txtResult').val());
+            }
+            else {
+                //LobiboxAlert('error','Error', $('#txtResult').val());
+                LobiboxErrorAlert('error', $('#txtResult').val());
+            }
+        }
+    });
+
+
+    $('#ddFormato').change(function () {
+        if ($('#ddFormato').val() == 2)
+        {
+            $('#btnDownload').prop('value', 'Ejecutar Query');
+            $('#btnDownload').prop('class', 'btn btn-success btn-lg');
+            document.getElementById('btnDownload').setAttribute('onclick', 'setDivAndSubmit()')
+            $('#ddDestino').prop("disabled", false);
+        }
+        else
+        {
+            $('#btnDownload').prop('value', 'Descargar Archivo SQL');
+            $('#btnDownload').prop('class', 'btn btn-primary btn-lg');
+            $('#ddDestino').prop("disabled", true);
+        }
+    });
+
+    function setDivAndSubmit() {
+        debugger
+       $('body').addClass('lobibox-open');
+       $('body').append('<div class="lobibox-backdrop"></div>');
+       LobiboxAlert('info', 'Información', 'Espere un momento por favor');
+    }
+
+
+
+    function LobiboxErrorAlert(type,message) {
+        Lobibox.alert(type, {
+            msg: message,
+            title: 'Error',
+        });
+    }
+    
+
+
+
+    function LobiboxAlert(type, title, message) {
+        Lobibox.notify(type, {
+            title: title,
+            size: 'normal',
+            pauseDelayOnHover: true,
+            continueDelayOnInactiveTab: false,
+            closeOnClick: true,
+            rounded: false,
+            position: "top center",
+            icon: true,
+            delayIndicator: true,
+            sound: false,
+            msg: message
+        });
+    }
+
+
+
+</script> 

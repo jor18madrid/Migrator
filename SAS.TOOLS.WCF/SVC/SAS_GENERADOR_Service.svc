@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SAS.TOOLS.WCF.SVC.SAS_GENERADOR_Service" CodeBehind="SAS_GENERADOR_Service.svc.cs" %>

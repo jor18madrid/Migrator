@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="27dae331b8f84d279a6852c5b35316a9" Name="Diagram1" ZoomLevel="31">
+        <EntityTypeShape EntityType="Model.SAS_ACCIONES" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_DICCIONARIO_ETAPAS" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_DICCIONARIO_FILTROS" Width="1.5" PointX="10" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_DICCIONARIO_OPERADORES" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS_OPE_ACCIONES" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS_OPERACION" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_MENUS" Width="1.5" PointX="5.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_PERFIL_FLUJO_OPE" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_PERFIL_MENU" Width="1.5" PointX="8" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_PERFILES" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_TABLAS" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_TABLAS_COLUMNAS" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SAS_TABLAS_FILTROS" Width="1.5" PointX="12.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FLUOPEACC_SASACC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TABFIL_DICFIL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FLUOPE_SASFLU_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FLUOPEACC_FLUOPE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SASPFO_FLUOPE_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SASPME_SASMENU_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TABCOL_SASTAB_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TABFIL_TABCOL_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.SAS_SISTEMAS" Width="1.5" PointX="15.5" PointY="5.875" />
+        <AssociationConnector Association="Model.SASACC_SASSIS_FK" />
+        <AssociationConnector Association="Model.DICETP_SASSIS_FK" />
+        <AssociationConnector Association="Model.DICFIL_SASSIS_FK" />
+        <AssociationConnector Association="Model.DICOPE_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASFLU_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASMENU_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASPER_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASTAB_SASSIS_FK" />
+        <AssociationConnector Association="Model.TABFIL_SASSIS_FK" />
+        <EntityTypeShape EntityType="Model.SAS_ACCESOS_GRUPOS" Width="1.5" PointX="23" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.SAS_ACCESOS_PERFILES" Width="1.5" PointX="20.75" PointY="11.125" />
+        <EntityTypeShape EntityType="Model.SAS_GRUPO_FILTRO" Width="1.5" PointX="17.75" PointY="6.875" />
+        <EntityTypeShape EntityType="Model.SAS_GRUPO_PREDICADO" Width="1.5" PointX="20" PointY="6" />
+        <AssociationConnector Association="Model.ACCGRP_SACPER_FK" />
+        <AssociationConnector Association="Model.ACCPER_SASPER_FK" />
+        <AssociationConnector Association="Model.SACPER_SASSIS_FK" />
+        <AssociationConnector Association="Model.GRPPRE_DICFIL_FK" />
+        <AssociationConnector Association="Model.GRPPRE_DICOPE_FK" />
+        <AssociationConnector Association="Model.GRPFIL_SASSIS_FK" />
+        <AssociationConnector Association="Model.GRPPRE_GRPFIL_FK" />
+        <EntityTypeShape EntityType="Model.MENSAJES_DE_ERROR" Width="1.5" PointX="10.75" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.SAS_CONDICIONES" Width="1.5" PointX="18.125" PointY="21.875" />
+        <EntityTypeShape EntityType="Model.SAS_CORREO_ENVIADOS" Width="1.5" PointX="12.75" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.SAS_CORREO_ENVIOS" Width="1.5" PointX="14.75" PointY="19.125" />
+        <EntityTypeShape EntityType="Model.SAS_CORREO_FORMATO" Width="1.5" PointX="18.125" PointY="31" />
+        <EntityTypeShape EntityType="Model.SAS_CORREO_REMITENTES" Width="1.5" PointX="5.75" PointY="21.125" />
+        <EntityTypeShape EntityType="Model.SAS_DOC_AUDITORIA" Width="1.5" PointX="3.375" PointY="22.75" />
+        <EntityTypeShape EntityType="Model.SAS_DOC_CABECERA" Width="1.5" PointX="1.125" PointY="17" />
+        <EntityTypeShape EntityType="Model.SAS_DOCGRP_GRUPO" Width="1.5" PointX="16.125" PointY="4.5" />
+        <EntityTypeShape EntityType="Model.SAS_DOCGRP_PREDICADO" Width="1.5" PointX="18.375" PointY="4.125" />
+        <EntityTypeShape EntityType="Model.SAS_DOCMEN_MENU" Width="1.5" PointX="3.375" PointY="27.25" />
+        <EntityTypeShape EntityType="Model.SAS_DOCPER_PERFIL" Width="1.5" PointX="3.375" PointY="17.375" />
+        <EntityTypeShape EntityType="Model.SAS_DOCPER_PERFIL_FLUOPE" Width="1.5" PointX="5.625" PointY="1.75" />
+        <EntityTypeShape EntityType="Model.SAS_DOCPER_PERFIL_MENU" Width="1.5" PointX="8.375" PointY="19.5" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS_OPE_GRUPO" Width="1.5" PointX="23.375" PointY="8.625" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS_OPE_REGLA" Width="1.5" PointX="26.375" PointY="12.125" />
+        <EntityTypeShape EntityType="Model.SAS_FLUJOS_TABLAS" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.SAS_PARAMETROS" Width="1.5" PointX="0.75" PointY="23.125" />
+        <EntityTypeShape EntityType="Model.SAS_REGLAS" Width="1.5" PointX="18.125" PointY="17.5" />
+        <EntityTypeShape EntityType="Model.SAS_REGLAS_CONDICIONES" Width="1.5" PointX="20.375" PointY="20.125" />
+        <EntityTypeShape EntityType="Model.SAS_SISTEMAS_APLICACION" Width="1.5" PointX="7.75" PointY="24.125" />
+        <EntityTypeShape EntityType="Model.SAS_SISTEMAS_ETAPAS" Width="1.5" PointX="9.75" PointY="24.125" />
+        <EntityTypeShape EntityType="Model.SAS_SISTEMAS_PARAMETROS" Width="1.5" PointX="11.75" PointY="24.125" />
+        <EntityTypeShape EntityType="Model.SAS_SOLICITUD_USUARIO" Width="1.5" PointX="18.875" PointY="35.5" />
+        <EntityTypeShape EntityType="Model.SAS_SOLUSR_AUDITORIA" Width="1.5" PointX="21.125" PointY="36.125" />
+        <EntityTypeShape EntityType="Model.SAS_SOLUSR_PERFIL" Width="1.5" PointX="21.125" PointY="3.5" />
+        <EntityTypeShape EntityType="Model.SAS_SOLUSR_PERFIL_GRUPO" Width="1.5" PointX="23.375" PointY="4.625" />
+        <EntityTypeShape EntityType="Model.SAS_USUARIOS" Width="1.5" PointX="18.125" PointY="26.75" />
+        <EntityTypeShape EntityType="Model.SAS_USUARIOS_BLOQUEO" Width="1.5" PointX="20.75" PointY="24.125" />
+        <EntityTypeShape EntityType="Model.SAS_USUARIOS_INFORMACION" Width="1.5" PointX="13.75" PointY="25.125" />
+        <EntityTypeShape EntityType="Model.SAS_USUARIOS_PARAMETROS" Width="1.5" PointX="22.75" PointY="20.125" />
+        <EntityTypeShape EntityType="Model.CG_REF_CODES" Width="1.5" PointX="22.75" PointY="24.125" />
+        <EntityTypeShape EntityType="Model.X_SAS_MENUS" Width="1.5" PointX="0.75" PointY="27.125" />
+        <AssociationConnector Association="Model.ACCPER_SASUSR_FK" />
+        <AssociationConnector Association="Model.SASCND_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASRLC_SASCND_FK" />
+        <AssociationConnector Association="Model.SASCFRM_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASDPRE_DICFIL_FK" />
+        <AssociationConnector Association="Model.SASDPRE_DICOPE_FK" />
+        <AssociationConnector Association="Model.SASDAUD_SASDCAB_FK" />
+        <AssociationConnector Association="Model.SASDGRP_SASDCAB_FK" />
+        <AssociationConnector Association="Model.SASDMEN_SASDCAB_FK" />
+        <AssociationConnector Association="Model.SASDPER_SASDCAB_FK" />
+        <AssociationConnector Association="Model.SASDPRE_SASDGRP_FK" />
+        <AssociationConnector Association="Model.SASDPFO_SASDPER_FK" />
+        <AssociationConnector Association="Model.SASDPME_SASDPER_FK" />
+        <AssociationConnector Association="Model.SASDPFO_FLUOPE_FK" />
+        <AssociationConnector Association="Model.SASDPME_SASMENU_FK" />
+        <AssociationConnector Association="Model.FLUTAB_SASFLU_FK" />
+        <AssociationConnector Association="Model.FLUOPEGRP_FLUOPE_FK" />
+        <AssociationConnector Association="Model.FLUOPEGRP_GRPFIL_FK" />
+        <AssociationConnector Association="Model.FLUOPERGL_FLUOPE_FK" />
+        <AssociationConnector Association="Model.FLUOPERGL_SASRGL_FK" />
+        <AssociationConnector Association="Model.FLUTAB_SASTAB_FK" />
+        <AssociationConnector Association="Model.SASOLPER_SASPER_FK" />
+        <AssociationConnector Association="Model.SASRGL_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASRLC_SASRGL_FK" />
+        <AssociationConnector Association="Model.SASOLPER_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASUSR_SASSIS_FK" />
+        <AssociationConnector Association="Model.SASOLPER_SASSUSR_FK" />
+        <AssociationConnector Association="Model.SASSAUD_SASSUSR_FK" />
+        <AssociationConnector Association="Model.SASSGRP_SASOLPER_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
